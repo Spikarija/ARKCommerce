@@ -7,7 +7,7 @@
 ----------
 
 ### **Description**
-ARKCommerce is a payment gateway that provides ARK crypto currency services to WooCommerce store operators on WordPress platform. All orders placed via ARKCommerce are kept on-hold until the ARK blockchain queries reveal a timely transaction for an appropriate amount of ARK and a correct order reference making a deposit into the monitored ARK wallet address belonging to the store, after which the order is marked as complete. ARKCommerce is able to fulfil its services without requiring or storing wallet passphrases.
+ARKCommerce is a payment gateway that provides the infrastructure for ARK crypto currency payment services to WooCommerce store operators on WordPress platform and does so without requiring or storing wallet passphrases. All orders placed via ARKCommerce are kept on-hold until the ARK blockchain queries reveal a transaction for an appropriate amount of ARK and a correct order reference making a deposit into the monitored ARK wallet address belonging to the store, after which the order is marked as complete. There is the option to limit the timeframe within which the customer must execute the transaction, or else the order gets cancelled.
 
 ARKCommerce solution leverages the versatility, resilience and quickness of ARK blockchain which features a special field named SmartBridge that allows for inserting text, links, order number reference and so on into the transaction. The blockchain also features 8 second block times allowing for quick transaction confirmations. Fully based on open source code and architecture, ARKCommerce aims to provide the infrastructure with the goal of wider market acceptance for ARK.
 
@@ -26,7 +26,7 @@ ARKCommerce solution leverages the versatility, resilience and quickness of ARK 
  - Receive support from ARK Community Fund at https://arkcommunityfund.com
  - Get deployed into the official ark.io store at https://shop.ark.io
 
-> *Initially, supported automatic pricing shall be based on coinmarketcap.com: **ARK** – ARK crypto currency, **BTC** – Bitcoin crypto currency, **USD** – US Dollar, **EUR** - Euro, **GBP** – Pound Sterling, **CHF** – Swiss Franc, **CNY** – Chinese Yuan, **JPY** – Japanese Yen, **KRW** – Korean Won, **CAD** – Canadian Dollar, **AUD** – Australian Dollar, **SEK** – Swedish Kroner **NOK** – Norwegian Kroner, **INR** – Indian Rupee, **BRL** – Brazilian Real, **CLP** – Chilean Peso, **CZK** – Czech Koruna, **DKK** – Danish Kroner, **HKD** – Hong Kong Dollar, **HUF** – Hungarian Forint, **IDR** – Indonesian Rupiah, **ILS** – Israeli New Shekel, **MXN** – Mexican Peso, **MYR** – Malaysian Ringgit,, **NZD** – New Zealand Dollar, **PHP** – Phillippine Peso, **PKR** – Pakistani Rupee, **PLN** – Polish Zloty, **RUB** – Russian Ruble, **SGD** – Singapore Dollar, **THB**- Thai Baht, **TRY** – Turkish Lira, **TWD** – Taiwanese Dollar, **ZAR** – South African Rand
+> *Initially, supported automatic pricing shall be based on coinmarketcap.com: **ARK** – ARK crypto currency, **BTC** – Bitcoin crypto currency, **USD** – US Dollar, **EUR** - Euro, **GBP** – Pound Sterling, **CHF** – Swiss Franc, **CNY** – Chinese Yuan, **JPY** – Japanese Yen, **KRW** – Korean Won, **CAD** – Canadian Dollar, **AUD** – Australian Dollar, **SEK** – Swedish Kroner **NOK** – Norwegian Kroner, **INR** – Indian Rupee, **BRL** – Brazilian Real, **CLP** – Chilean Peso, **CZK** – Czech Koruna, **DKK** – Danish Kroner, **HKD** – Hong Kong Dollar, **HUF** – Hungarian Forint, **IDR** – Indonesian Rupiah, **ILS** – Israeli New Shekel, **MXN** – Mexican Peso, **MYR** – Malaysian Ringgit,, **NZD** – New Zealand Dollar, **PHP** – Phillippine Peso, **PKR** – Pakistani Rupee, **PLN** – Polish Zloty, **RUB** – Russian Ruble, **SGD** – Singaporean Dollar, **THB**- Thai Baht, **TRY** – Turkish Lira, **TWD** – Taiwanese Dollar, **ZAR** – South African Rand
 
 ----------
 
@@ -35,7 +35,7 @@ When the plugin reaches its final form and infrastructure for running it is secu
 
   - [x] Successful initial deployment and automated order processing
  
-  - [ ] Exchange rate synchronisation automation
+  - [x] Exchange rate synchronisation automation
  
   - [x] QR Code integration
  
@@ -43,7 +43,7 @@ When the plugin reaches its final form and infrastructure for running it is secu
  
   - [ ] UX finalisation
  
-  - [ ] Translation provision
+  - [x] Translation provision
  
   - [ ] Testing, code QA and optimisation
  
@@ -64,11 +64,12 @@ There will be an initial promotional period of absolutely free service. Subseqen
 
 ----------
 ## **Author**
-Spikarija - Milan Semen: milan(at)semen(dot)si
+Spikarija - Milan Semen
 
 ----------
 ## **License**
 
 **GNU General Public License v3.0**
+
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details: https://www.gnu.org/licenses/gpl-3.0.html

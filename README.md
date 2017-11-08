@@ -32,15 +32,25 @@ ARKCommerce solution leverages the versatility, resilience and quickness of ARK 
 
 ## **Milestones to v1.0.0**
 When it is finished, v1.0.0 will be published on GitHub and WordPress.org.
+
  [ ] Successful initial deployment and automatic order processing
+ 
  [ ] Exchange rate synchronisation automation
+ 
  [ ] QR Code integration
+ 
  [ ] UI features implementation
+ 
  [ ] UX finalisation
+ 
  [ ] Translation provision
+ 
  [ ] Testing, code QA and optimisation
+ 
  [ ] UA testing
+ 
  [ ] Self-service API key registration process implementation
+ 
  [ ] Website deployment and content creation
  
 There will be an initial promotional period of absolutely free service. Subseqent introduction of fees may be necessary in order to cover infrastructure costs as the system relies on the ARKCommerce Node acting as a bridge between merchants and ARK blockchain queries.

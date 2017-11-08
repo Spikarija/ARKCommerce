@@ -6,7 +6,7 @@
 
 ----------
 
-#### **Description**
+### **Description**
 ARKCommerce is a payment gateway that provides ARK crypto currency services to WooCommerce store operators on WordPress platform. All orders placed via ARKCommerce are kept on-hold until the ARK blockchain queries reveal a timely transaction for an appropriate amount of ARK and a correct order reference making a deposit into the monitored ARK wallet address belonging to the store, after which the order is marked as complete. ARKCommerce is able to fulfil its services without requiring or storing wallet passphrases.
 
 ARKCommerce solution leverages the versatility, resilience and quickness of ARK blockchain which features a special field named SmartBridge that allows for inserting text, links, order number reference and so on into the transaction. The blockchain also features 8 second block times allowing for quick transaction confirmations. Fully based on open source code and architecture, ARKCommerce aims to provide the infrastructure with the goal of wider market acceptance for ARK.
@@ -31,7 +31,7 @@ ARKCommerce solution leverages the versatility, resilience and quickness of ARK 
 ----------
 
 ## **Milestones to v1.0.0**
-When it is finished, v1.0.0 will be published on GitHub and WordPress.org.
+When the plugin reaches its final form and infrastructure for running it is secure, v1.0.0 will be published both here on GitHub and WordPress.org for it relies on an ARKCommerce Node that is in intermittent operation and totally inaccessible from WAN at this time.
 
   - [x] Successful initial deployment and automated order processing
  

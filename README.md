@@ -57,8 +57,10 @@ There will be an initial promotional period of absolutely free service. Subseqen
 
 ----------
 ## **Current List of External Issues**
- - WooCommerce pricing issue: https://github.com/woocommerce/woocommerce/issues/17581
- - ARK Desktop Client transaction altering issue: https://github.com/ArkEcosystem/ark-desktop/issues/385
+ - <s>WooCommerce pricing issue</s>: https://github.com/woocommerce/woocommerce/issues/17581
+*remedied in next release (1.4.2)
+ - <s>ARK Desktop Client transaction altering issue</s>: https://github.com/ArkEcosystem/ark-desktop/issues/385
+*remedied in next release (3.2.4)
 
 ----------
 ## **Author**

@@ -33,11 +33,11 @@ ARKCommerce solution leverages the versatility, resilience and quickness of ARK 
 ## **Milestones to v1.0.0**
 When it is finished, v1.0.0 will be published on GitHub and WordPress.org.
 
-  - [ ] Successful initial deployment and automatic order processing
+  - [x] Successful initial deployment and automated order processing
  
   - [ ] Exchange rate synchronisation automation
  
-  - [ ] QR Code integration
+  - [x] QR Code integration
  
   - [ ] UI features implementation
  

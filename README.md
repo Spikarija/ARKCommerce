@@ -39,7 +39,7 @@ When the plugin reaches its final form and infrastructure for running it is secu
  
   - [x] QR Code integration
  
-  - [ ] UI features implementation
+  - [x] UI features implementation
  
   - [ ] UX finalisation
  
@@ -58,9 +58,9 @@ There will be an initial promotional period of absolutely free service. Subseqen
 ----------
 ## **Current List of External Issues**
  - <s>WooCommerce pricing issue</s>: https://github.com/woocommerce/woocommerce/issues/17581
-*remedied in next release (3.2.4)
+<s>*remedied in next release (3.2.4)</s> current release includes the fix
  - <s>ARK Desktop Client transaction altering issue</s>: https://github.com/ArkEcosystem/ark-desktop/issues/385
-*remedied in next release (1.4.2)
+<s>*remedied in next release (1.4.2)</s> current release includes the fix
 
 ----------
 ## **Author**

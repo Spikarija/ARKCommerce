@@ -49,7 +49,7 @@ When the plugin reaches its final form and infrastructure for running it is secu
  
   - [ ] UA testing
  
-  - [ ] Self-service API key registration process implementation
+  - [X] Self-service user registration process implementation
  
   - [ ] Website deployment and content creation
  

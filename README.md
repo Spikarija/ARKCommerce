@@ -33,6 +33,8 @@ ARKCommerce solution leverages the versatility, resilience and quickness of ARK 
 ## **Milestones to v1.0.0**
 When the plugin reaches its final form and infrastructure for running it is secure, v1.0.0 will be published both here on GitHub and WordPress.org for it relies on an ARKCommerce Node that is in intermittent operation and totally inaccessible from WAN at this time.
 
+The initial development is nearly complete. Currently awaiting the arrival of hardware the system shall run on.
+
   - [x] Successful initial deployment and automated order processing
  
   - [x] Exchange rate synchronisation automation
@@ -45,13 +47,13 @@ When the plugin reaches its final form and infrastructure for running it is secu
  
   - [x] Translation provision
  
-  - [ ] Testing, code QA and optimisation
+  - [x] Testing, code QA and optimisation
  
   - [ ] UA testing
  
   - [X] Self-service user registration process implementation
  
-  - [ ] Website deployment and content creation
+  - [x] Website deployment and content creation
  
 There will be an initial promotional period of absolutely free service. Subseqent introduction of fees may be necessary in order to cover infrastructure costs as the system relies on the ARKCommerce Node acting as a bridge between merchants and ARK blockchain queries.
 

@@ -33,7 +33,7 @@ ARKCommerce solution leverages the versatility, resilience and quickness of ARK 
 ## **Milestones to v1.0.0**
 When the plugin reaches its final form and infrastructure for running it is secure, v1.0.0 will be published both here on GitHub and WordPress.org for it relies on an ARKCommerce Node that is in intermittent operation and totally inaccessible from WAN at this time.
 
-The initial development is nearly complete. Currently awaiting the arrival of hardware the system shall run on.
+The initial development is nearly complete. Currently awaiting the arrival of hardware the system shall run on. As soon as the infrastructure is deployed, secured, and publicly accessible UA testing shall commence.
 
   - [x] Successful initial deployment and automated order processing
  
@@ -43,7 +43,7 @@ The initial development is nearly complete. Currently awaiting the arrival of ha
  
   - [x] UI features implementation
  
-  - [ ] UX finalisation
+  - [x] UX finalisation
  
   - [x] Translation provision
  

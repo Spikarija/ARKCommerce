@@ -1,9 +1,11 @@
 ### **Finalised UX Test Run Demonstration**
 
 
-**A detailed walthrough as if carried out by a WooCommerce online merchant invilving user registration, plugin deployment, and execution of a test payment using sandbox mode that employs DARK Devnet blockchain and its token, DARK. ARK Mainnet blockchain and its token ARK are identical, the only difference being that using them costs a transaction fee, whereas DARK tokens are freely available either through KristjanK's DARK Paper Wallet Generator or ARK Official Slack.**
+**A detailed walthrough as if carried out by a WooCommerce online merchant invilving user registration, plugin deployment, and execution of a test payment using sandbox mode that employs DARK Devnet blockchain and its token, DARK.**
 
-For the sake ov brevity, omitted are WooCommerce customer emails and ARKCommerce administrator emails, both have been featured in this repo under "testing" and "UI testing" folders.
+ARK Mainnet blockchain and its token ARK are identical, the only difference being that using them costs a transaction fee, whereas DARK tokens are freely available either through KristjanK's DARK Paper Wallet Generator or ARK Official Slack.
+
+For the sake of brevity, omitted are WooCommerce customer emails and ARKCommerce administrator emails, both have been featured in this repo under "testing" and "UI testing" folders.
 
 
 ----------

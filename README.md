@@ -16,7 +16,7 @@ ARKCommerce solution leverages the versatility, resilience and quickness of ARK 
 ## **V1.0 Released**
 
 All plugin files have been published in this repository, as well as on https://wordpress.org/plugins/arkcommerce
-The service is free for the foreseeable future, by all means take advantage of it
+The service is free for the foreseeable future, by all means take advantage of it; register on https://www.arkcommerce.net/
 
 ----------
 

@@ -1,0 +1,22 @@
+@font-face {
+	font-family: 'arkcommerce';
+	src: url('../fonts/arkcommerce.eot');
+	src: url('../fonts/arkcommerce.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/arkcommerce.woff') format('woff'),
+		 url('../fonts/arkcommerce.ttf') format('truetype'),
+		 url('../fonts/arkcommerce.svg#arkcommerce') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.dashicons-arkcommerce:before {
+	content: '\0041';
+	display: inline-block;
+	font-family: 'arkcommerce';
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	vertical-align: middle;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

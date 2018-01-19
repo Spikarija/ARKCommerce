@@ -1,0 +1,125 @@
+# ARKCommerce FAQ Widget translation strings
+# Copyright (C) 2017 Milan Semen
+# This file is distributed under the same license as the entire ARKCommerce client package
+msgid ""
+msgstr ""
+"Project-Id-Version: VERSION\n"
+"POT-Creation-Date: 2017-10-21 22:44+0200\n"
+"PO-Revision-Date: 2018-01-09 00:30+0100\n"
+"Last-Translator: \n"
+"Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
+"Language: sl_SI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.5\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+
+#: arkfaqwidget.php:50 arkfaqwidget.php:120
+msgid "ARKCommerce FAQ"
+msgstr "ARKCommerce pogosta vprašanja"
+
+#: arkfaqwidget.php:65
+msgid "Frequenty Asked Questions"
+msgstr "Pogosta vprašanja"
+
+#: arkfaqwidget.php:70
+msgid "What is ARK?"
+msgstr "Kaj je ARK?"
+
+#: arkfaqwidget.php:73
+msgid ""
+"ARK is a crypto currency that provides users, developers, and startups with "
+"innovative blockchain technologies. Its aim is to create an entire ecosystem "
+"of linked chains and a virtual spiderweb of endless use-cases that make ARK "
+"highly flexible, adaptable, and scalable."
+msgstr ""
+"ARK je kripto valuta, ki uporabnikom, razvijalcem in start-upom omogoča "
+"izrabo inovativnih tehnologij blokovnih verig . Cilj je ustvaritev celotnega "
+"ekosistema povezanih verig in virtualne pajkove mreže primerov uporabe, ki "
+"izrabljajo ARK fleksibilnost, prilagodljivost in skalabilnost."
+
+#: arkfaqwidget.php:76
+msgid "Why are ARK prices changing?"
+msgstr "Zakaj se ARK cene spreminjajo?"
+
+#: arkfaqwidget.php:79
+msgid ""
+"The store originally prices items in fiat currency and uses automatic "
+"exchange rate synchronisation that executes biminutely updates and applies "
+"the updated exchange rate on page loads. This makes their conversion into "
+"ARK prices reflect exchange rate changes."
+msgstr ""
+"Upravljalec trgovine opredeljuje cenitve izdelkov v fiat valuti in izrablja "
+"samodejno sinhronizacijo menjalnega razmerja, ki se posodablja vsaki dve "
+"minuti, ter uveljavi spremembo ob vsakem prikazu strani. Iz tega razloga se "
+"vsakič ob pretvorbi v ARK odražajo te spremembe v ceni."
+
+#: arkfaqwidget.php:82
+msgid "Why mustn't I use an exchange wallet?"
+msgstr "Zakaj ne smem uporabiti borzne denarnice?"
+
+#: arkfaqwidget.php:85
+msgid ""
+"Because none of the exchanges allow users to enter anything into the "
+"SmartBridge field, whereas this store necessitates order number reference "
+"entry that enables automatic transaction discovery and order processing by "
+"the system."
+msgstr ""
+"Ker nobena izmed borz uporabnikom ne omogoča kakršnegakoli vnosa v "
+"SmartBridge polje, medtem ko sistem v uporabi trgovine terja vnos sklica "
+"številke naročila, kar omogoča samodejno odkrivanje transakcij in obdelavo "
+"naročil."
+
+#: arkfaqwidget.php:88
+msgid "What is order expiry?"
+msgstr "Kaj je potek naročila?"
+
+#: arkfaqwidget.php:91
+msgid ""
+"The store can set up an order expiry period within which customers must "
+"execute the ARK payment transaction for their orders, otherwise they get "
+"cancelled. This feature serves as a risk management mechanism protecting "
+"against crypto currency market volatility."
+msgstr ""
+"Trgovina lahko nastavi obdobje poteka naročila, znotraj katerega morajo "
+"stranke izvršiti ARK transakcijo za plačilo svojega naročila, sicer se "
+"slednje prekliče. Ta funkcija služi kot mehanizem upravljanja s tveganjem "
+"pred spremembami na kripto valutnem trgu."
+
+#: arkfaqwidget.php:94
+msgid "How do I carry out an ARK transaction?"
+msgstr "Kako izvedem ARK transakcijo?"
+
+#: arkfaqwidget.php:97
+msgid ""
+"Use the ARK Online or ARK Desktop or ARK Mobile wallets to do so. When "
+"making a transaction simply follow the instructions provided both upon order "
+"placement and inside the order confirmation email. They include store wallet "
+"address, SmartBridge reference and the amount total."
+msgstr ""
+"Uporabite ARK spletno, namizno, ali mobilno denarnico za izvedbo, pri čemer "
+"sledite navodilom, ki so vidna tako pri podaji naročila kot tudi znotraj e-"
+"poštnega potrdila naročila. Obsegajo naslov denarnice trgovine, SmartBridge "
+"sklic in končni znesek."
+
+#: arkfaqwidget.php:100
+msgid "I paid for my order and got no response!"
+msgstr "Naročilo je plačano, a ni odziva!"
+
+#: arkfaqwidget.php:103
+msgid ""
+"There may be an error storeside that caused automatic order transaction "
+"discovery and order processing to fail. Do not hesitate to request "
+"assistance via store support channel with your Transaction ID so they are "
+"able to manually verify the payment."
+msgstr ""
+"Morebiti je prišlo do napake na strani trgovine, kar je onemogočilo "
+"samodejno odkrivanje transakcije in uspešno obdelavo naročila. Ne oklevajte "
+"z zahtevo po kanalu podpore trgovca, ki bo ročno preveril vaše plačilo, "
+"potrebujete le identifikator transakcije."
+
+#: arkfaqwidget.php:123
+msgid "Title:"
+msgstr "Naziv:"

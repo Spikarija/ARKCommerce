@@ -13,6 +13,13 @@ ARKCommerce solution leverages the versatility, resilience and quickness of ARK 
 
 ----------
 
+## **V1.0 Released**
+
+All plugin files have been published in this repository, as well as on https://wordpress.org/plugins/arkcommerce
+The service is free for the foreseeable future, by all means take advantage of it
+
+----------
+
 ## **Mission Objectives**
  - Develop an ARK payment gateway with automatic order processing and reliable transaction validation
  - Make the deployment and configiration easy and rapid via common WordPress and cPanel administration interfaces that are common with web hosting providers
@@ -30,8 +37,8 @@ ARKCommerce solution leverages the versatility, resilience and quickness of ARK 
 
 ----------
 
-## **Milestones to v1.0.0**
-When the plugin reaches its final form and infrastructure for running it is secure, v1.0.0 will be published both here on GitHub and WordPress.org for it relies on an ARKCommerce Node that is in intermittent operation and totally inaccessible from WAN at this time.
+## **Milestones to v1.0**
+When the plugin reaches its final form and infrastructure for running it is secure, v1.0 will be published both here on GitHub and WordPress.org for it relies on an ARKCommerce Node that is in intermittent operation and totally inaccessible from WAN at this time.
 
 **The initial development is nearly complete. Currently awaiting the arrival of hardware the system shall run on. As soon as the infrastructure is deployed, secured, and publicly accessible, UA testing shall commence.**
 
@@ -49,7 +56,7 @@ When the plugin reaches its final form and infrastructure for running it is secu
  
   - [x] Testing, code QA and optimisation
  
-  - [ ] UA testing
+  - [x] UA testing
  
   - [X] Self-service user registration process implementation
  

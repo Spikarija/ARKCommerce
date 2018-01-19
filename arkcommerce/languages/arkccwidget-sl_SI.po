@@ -1,0 +1,41 @@
+# ARKCommerce Currency Conversion Widget translation strings
+# Copyright (C) 2017 Milan Semen
+# This file is distributed under the same license as the entire ARKCommerce client package
+msgid ""
+msgstr ""
+"Project-Id-Version: VERSION\n"
+"POT-Creation-Date: 2017-10-21 22:44+0200\n"
+"PO-Revision-Date: 2017-12-13 00:24+0100\n"
+"Last-Translator: \n"
+"Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
+"Language: sl_SI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.5\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+
+#: arkccwidget.php:48
+msgid "ARK Conversion"
+msgstr "Pretvorba v ARK"
+
+#: arkccwidget.php:67
+msgid "Exchange Rate"
+msgstr "Menjalno razmerje"
+
+#: arkccwidget.php:67
+msgid "per ARK"
+msgstr "na ARK"
+
+#: arkccwidget.php:67
+msgid "Convert"
+msgstr "Pretvori"
+
+#: arkccwidget.php:81
+msgid "Currency Converter"
+msgstr "Valutna pretvorba"
+
+#: arkccwidget.php:84
+msgid "Title:"
+msgstr "Naziv:"

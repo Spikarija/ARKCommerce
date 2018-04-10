@@ -1,4 +1,11 @@
 # **ARKCommerce**
+
+# Introduction
+
+<p align="center">
+    <a href="https://arkcommunity.fund/"><img src="https://arkcommunity.fund/media-kit/funded/banner.png" /></a>
+</p>
+
 #### WordPress Payment Gateway for WooCommerce
 ----------
 

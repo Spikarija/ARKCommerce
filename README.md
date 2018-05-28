@@ -25,6 +25,13 @@ ARKCommerce solution leverages the versatility, resilience and quickness of ARK 
 All plugin files have been published in this repository, as well as on https://wordpress.org/plugins/arkcommerce
 The service is free for the foreseeable future, by all means take advantage of it; register on https://www.arkcommerce.net/
 
+## **V1.0.1 Released**
+
+Update to Coinmarketcap.com v2 API
+Update to redesigned WooCommerce UI
+Compatible with latest WordPress Core 4.9.6
+Compatible with latest WooCommerce 3.4.0
+
 ----------
 
 ## **Mission Objectives**

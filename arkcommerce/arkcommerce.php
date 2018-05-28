@@ -3,12 +3,14 @@
 Plugin Name: ARKCommerce
 Plugin URI:  https://www.arkcommerce.net
 Description: ARKCommerce is a payment gateway that provides the infrastructure for ARK crypto currency payment services for WooCommerce store operators on WordPress platform and does so without requiring or storing wallet passphrases. Fully based on open source code with the goal of wider market acceptance of ARK.
-Version:     1.0
+Version:     1.0.1
 Author:      Spika
 Author URI:  https://github.com/Spikarija/ARKCommerce
 License:     MIT License
 Text Domain: arkcommerce
 Domain Path: /languages
+WC requires at least 3.2.4
+WC tested up to 3.4.0
 
 ARKCommerce
 Copyright (C) 2017 Milan Semen
@@ -22,7 +24,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 //////////////////////////////////////////////////////////////////////////////////////////
 //	START OF ARKCOMMERCE																//
 //////////////////////////////////////////////////////////////////////////////////////////
-define( 'ARKCOMMERCE_VERSION', '1.0.0' );
+define( 'ARKCOMMERCE_VERSION', '1.0.1' );
 
 // Prohibit direct access
 if( !defined( 'ABSPATH' ) ) exit;
@@ -1116,7 +1118,7 @@ function arkcommerce_check_currency_support()
 	// Gather and/or set variables
 	$store_currency = get_woocommerce_currency();
 	
-	// List supported currencies (coinmarketcap.com listings as of 12/2017)
+	// List supported currencies (coinmarketcap.com listings as of 5/2018)
 	$supported_currencies = array( "ARK", "BTC", "USD", "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EUR", "GBP", "HKD", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PKR", "PLN", "RUB", "SEK", "SGD", "THB", "TRY", "TWD", "ZAR" );
 	
 	// Currency support check
@@ -1145,11 +1147,11 @@ function arkcommerce_update_exchange_rate()
 		// Check if ARK already chosen as main currency
 		if( $store_currency == 'ARK' ) $arkexchangerate = 1;
 		
-		// Query coinmarketcap.com API
+		// Query coinmarketcap.com APIv2
 		else 
 		{
 			// Construct a query URI for Coinmarketcap; expected number of results: 1
-			$cmc_queryurl = "https://api.coinmarketcap.com/v1/ticker/ark/?convert=$store_currency";
+			$cmc_queryurl = "https://api.coinmarketcap.com/v2/ticker/1586/?convert=$store_currency";
 			
 			// Query CoinMarketCap API for ARK market price in supported chosen currency
 			$cmcresponse = wp_remote_get( $cmc_queryurl );
@@ -1160,10 +1162,10 @@ function arkcommerce_update_exchange_rate()
 				$arkmarketprice = json_decode( $cmcresponse['body'], true );
 				
 				// Construct a suitable key identifier for in-array lookup
-				$chosen_currency_var = sprintf( "price_%s", ( strtolower( $store_currency ) ) );
+				$chosen_currency_var = strtoupper( $store_currency );
 				
 				// Determine the exchange rate
-				$arkexchangerate = $arkmarketprice[0][$chosen_currency_var];
+				$arkexchangerate = $arkmarketprice[data][quotes][$chosen_currency_var][price];
 			}
 		}
 	}
@@ -1793,6 +1795,9 @@ function arkcommerce_display_status_widget()
 	$arkgatewaysettings = get_option( 'woocommerce_ark_gateway_settings' );
 	$arkrestapikey = $arkgatewaysettings['arkapikey'];
 	$arknode = $arkgatewaysettings['arknode'];
+	$arkmarketexchangerate = $arkgatewaysettings['arkexchangerate'];
+	$store_currency = get_woocommerce_currency();
+	$arkexchangerate = arkcommerce_get_exchange_rate();
 	$storewalletaddress = $arkgatewaysettings['arkaddress'];
 	$arkblockheight = arkcommerce_get_block_height();
 	$wallet_balance = arkcommerce_get_wallet_balance();
@@ -1810,26 +1815,9 @@ function arkcommerce_display_status_widget()
 	if( $arkblockheight != 0 ) echo( '<span class="dashicons dashicons-info" style="color:lime;"> </span> <b style="color:black;">' . __( 'ARKCommerce Node operational', 'arkcommerce' ) . '. ' . __( 'ARK block height', 'arkcommerce' ) . ': ' . $arkblockheight . '</b>' );
 	else echo( '<span class="dashicons dashicons-info" style="color:red;"> </span> <b style="color:black;">' . __( 'ARKCommerce Node unresponsive', 'arkcommerce' ) . '.</b>' ); 
 	
-	// Construct a query URI for Coinmarketcap; expected number of results: 1
-	$cmc_queryurl = "https://api.coinmarketcap.com/v1/ticker/ark/?convert=EUR";
-	
-	// Query CoinMarketCap API for ARK market price (USD, EUR, BTC)
-	$cmcresponse = wp_remote_get( $cmc_queryurl );
-	
-	// CMC API response validation
-	if( is_array( $cmcresponse) ) 
-	{
-		$arkmarketprice = json_decode( $cmcresponse['body'], true );
+	// Display Exchange rate information
+	echo( '<hr><b>' . __( 'Market exchange rate', 'arkcommerce' ) . '</b>:</span> <i>' . $arkgatewaysettings['arkexchangerate'] . ' ' . $store_currency . '/ARK</i> | <b>' . __( 'Store exchange rate', 'arkcommerce' ) . '</b>: <i>' . $arkexchangerate . ' ' . $store_currency . '/ARK</i>' );
 		
-		// Determine whether the CMC node produces valid result
-		if( !empty( $arkmarketprice[0][price_usd] ) ) echo( sprintf( '<hr><b>' . __( 'ARK Market Price', 'arkcommerce') . ': %s USD | %s EUR | %s BTC </b>', $arkmarketprice[0][price_usd], $arkmarketprice[0][price_eur], $arkmarketprice[0][price_btc] ) );
-		
-		// Construct CMC error info
-		else echo( '<hr><span class="dashicons dashicons-info" style="color:red;"> </span> <b style="color:black;">' . __( 'Unable to display current market prices for ARK, coinmarketcap.com unresponsive.', 'arkcommerce' ) . '</b>' );
-	}
-	// Construct CMC error info
-	else echo( '<hr><span class="dashicons dashicons-info" style="color:red;"> </span> <b style="color:black;">' . __( 'Unable to display current market prices for ARK, coinmarketcap.com unresponsive.', 'arkcommerce' ) . '</b>' );
-	
 	// Construct a store ARK wallet address transactions query URI for ARKCommerce Node
 	if( $arkgatewaysettings['darkmode'] == 'yes' ) $ark_txqueryurl = "https://$arknode/api/v2/dark/_table/transactions?fields=id%2C%20senderId%2C%20amount%2C%20vendorField&filter=recipientId%3D$storewalletaddress&limit=10&order=timestamp%20dsc&api_key=$darkrestapikey&session_token=$sessiontoken";
 	else $ark_txqueryurl = "https://$arknode/api/v2/ark/_table/transactions?fields=id%2C%20senderId%2C%20amount%2C%20vendorField&filter=recipientId%3D$storewalletaddress&limit=10&order=timestamp%20dsc&api_key=$arkrestapikey&session_token=$sessiontoken";
@@ -2179,7 +2167,7 @@ function arkcommerce_preferences()
 									<input type="radio" name="autoexchange" value="multirate" class="arkcommerce-radio"' . $typemultirate . $arkchosen . $exoticcurrencychosen . '> 
 										' . __( 'Automatic exchange rate with multiplication', 'arkcommerce' ) . ' 
 										<i>
-											(' . __( 'e.g. 1.01 multiplier is 1% over market rate', 'arkcommerce' ) . ')
+											(' . __( 'e.g. 1.01 multiplier is 1 percent over market rate', 'arkcommerce' ) . ')
 										</i>: 
 										<input name="multiplier_rate" type="number" step="0.01" value="' . $arkgatewaysettings['arkmultiplier'] . '" class="arkcommerce-input"' . $arkchosen . $exoticcurrencychosen . '>
 									<br>
@@ -2418,7 +2406,9 @@ function arkcommerce_navigator()
 	global $wpdb;
 	$arkgatewaysettings = get_option( 'woocommerce_ark_gateway_settings' );
 	$arkrestapikey = $arkgatewaysettings['arkapikey'];
+	$arkexchangerate = arkcommerce_get_exchange_rate();
 	$arknode = $arkgatewaysettings['arknode'];
+	$store_currency = get_woocommerce_currency();
 	$storewalletaddress = $arkgatewaysettings['arkaddress'];
 	$arkblockheight = arkcommerce_get_block_height();
 	$wallet_balance = arkcommerce_get_wallet_balance();
@@ -2436,28 +2426,11 @@ function arkcommerce_navigator()
 	if( $arkblockheight != 0 ) $arknodestatus = ( '<span class="dashicons dashicons-info" style="color:lime;"> </span> <b style="color:black;">' . __( 'ARKCommerce Node operational', 'arkcommerce' ) . '. ' . __( 'ARK block height', 'arkcommerce' ) . ': ' . $arkblockheight . '</b>' );
 	else $arknodestatus = ( '<span class="dashicons dashicons-info" style="color:red;"> </span> <b style="color:black;">' . __( 'ARKCommerce Node unresponsive', 'arkcommerce' ) . '.</b>' );
 	
-	// Construct a query URI for Coinmarketcap; expected number of results: 1
-	$cmc_queryurl = "https://api.coinmarketcap.com/v1/ticker/ark/?convert=EUR";
-	
-	// Query CoinMarketCap API for ARK market price (USD, EUR, BTC)
-	$cmcresponse = wp_remote_get( $cmc_queryurl );
-	
-	// CMC API response validation
-	if( is_array( $cmcresponse) ) 
-	{
-		$arkmarketprice = json_decode( $cmcresponse['body'], true );
-		
-		// Determine whether the CMC node produces valid result, if so construct price info
-		if( !empty( $arkmarketprice[0][price_usd] ) ) $cmc_prices = sprintf( ( '<b>' . __( 'ARK market price', 'arkcommerce') . ': %s USD | %s EUR | %s BTC </b>' ), $arkmarketprice[0][price_usd], $arkmarketprice[0][price_eur], $arkmarketprice[0][price_btc] );
-		
-		// Construct CMC error info
-		else $cmc_prices = ( '<span class="dashicons dashicons-info" style="color:red;"> </span> <b style="color:black;">' . __( 'Unable to display ARK market price from coinmarketcap.com', 'arkcommerce' ) . '</b>' );
-	}
-	// Construct CMC error info
-	else $cmc_prices = ( '<span class="dashicons dashicons-info" style="color:red;"> </span> <b style="color:black;">' . __( 'Unable to display ARK market price from coinmarketcap.com', 'arkcommerce' ) . '</b>' );
+	// Display Exchange rate information
+	$displayexchangerate = ( '<b>' . __( 'Market exchange rate', 'arkcommerce' ) . '</b>:</span> <i>' . $arkgatewaysettings['arkexchangerate'] . ' ' . $store_currency . ' ' . __( 'per ARK', 'arkcommerce' ) . '</i> | <b>' . __( 'Store exchange rate', 'arkcommerce' ) . '</b>: <i>' . $arkexchangerate . ' ' . $store_currency . ' ' . __( 'per ARK', 'arkcommerce' ) . '</i>' );
 	
 	// Display header
-	echo( arkcommerce_headers ( 'navigator' ) . '<hr>' . $arknodestatus . ' | ' . $cmc_prices . '<hr><b>' . __( 'ARK wallet address', 'arkcommerce' ) . ' <a class="arkcommerce-link" target="_blank" href="' . $explorerurl . 'address/' . $storewalletaddress . '">' . $storewalletaddress . '</a> ' . __( 'balance', 'arkcommerce' ) . ': Ѧ' . $wallet_balance . '</b><i> (' . __( 'opens in ARK blockchain explorer application', 'arkcommerce' ) . ')</i></div>' );
+	echo( arkcommerce_headers ( 'navigator' ) . '<hr>' . $arknodestatus . ' | ' . $displayexchangerate . '<hr><b>' . __( 'ARK wallet address', 'arkcommerce' ) . ' <a class="arkcommerce-link" target="_blank" href="' . $explorerurl . 'address/' . $storewalletaddress . '">' . $storewalletaddress . '</a> ' . __( 'balance', 'arkcommerce' ) . ': Ѧ' . $wallet_balance . '</b><i> (' . __( 'opens in ARK blockchain explorer application', 'arkcommerce' ) . ')</i></div>' );
 	
 	// Construct a store ARK wallet address transactions query URI for ARKCommerce Node
 	if( $arkgatewaysettings['darkmode'] == 'yes' ) $ark_txqueryurl = "https://$arknode/api/v2/dark/_table/transactions?fields=id%2C%20senderId%2C%20amount%2C%20vendorField&filter=recipientId%3D$storewalletaddress&limit=10&order=timestamp%20dsc&api_key=$darkrestapikey&session_token=$sessiontoken";
@@ -2702,8 +2675,7 @@ function arkcommerce_headers( $headertype )
 	
 	if( $headertype == 'settings' )
 	{
-		$header = ( '<div class="arkcommerce-wrap"><img width="120" height="95" alt="ARKCommerce" class="arkcommerce-pic-left" src="' . $arkcommerce_logo . '">' . $ark_links . $arkcommerce_link . ' | ' . $gateway_preferences_link . ' | ' . $gateway_navigator_link . ' | ' . $gateway_information_link . ' |<hr><span style="color:red;" class="dashicons dashicons-warning"> </span> <b style="color:black;">' . __( 'WARNING: WHEN CREATING A NEW WALLET MAKE SURE TO SAFELY STORE THE PASSPHRASE! THERE IS NO WAY OF RECOVERING A LOST ONE!', 'arkcommerce' ) . '<hr>' . __( 'ARKCommerce payment gateway enables merchants to receive payments in ARK crypto currency without requiring or storing wallet passphrases.', 'arkcommerce' ) . '</b></div>' );
-		if( DISABLE_WP_CRON !== true ) $header .= ( '<p><span style="color:#4ab6ff;" class="dashicons dashicons-clock"> </span> <b style="color:black;">' . __( 'Both automatic exchange rate synchronization and transaction verification queries depend on "WP-Cron" task; for details refer to', 'arkcommerce' ) . ' <a class="arkcommerce-link" target="_blank" href="' . admin_url( "admin.php?page=arkcommerce_information" ) . '">' . __( 'ARKCommerce Information', 'arkcommerce' ) . '</a></b>.</p>' );
+		$header = ( '<span class="dashicons-before dashicons-arkcommerce" style="vertical-align:middle;"> </span><b>ARKCommerce Payment Gateway</b>' );
 	}
 	elseif( $headertype == 'navigator' )
 	{
@@ -2715,7 +2687,7 @@ function arkcommerce_headers( $headertype )
 	}
 	elseif( $headertype == 'information' )
 	{
-		$header = ( '<div class="wrap"><p><h1>ARKCommerce ' . __( 'Information', 'arkcommerce' ) . '</h1></p><div class="arkcommerce-wrap"><img width="100" height="80" alt="ARKCommerce" class="arkcommerce-pic-left" src="' . $arkcommerce_logo . '">' . $ark_links . $arkcommerce_link . ' | ' . $gateway_settings_link . ' | ' . $gateway_preferences_link . ' | ' . $gateway_navigator_link . ' |<img width="80" height="80" alt="spika" class="arkcommerce-pic-right" src="' . plugin_dir_url( __FILE__ ) . 'assets/images/spika.png' . '">' );
+		$header = ( '<div class="wrap"><p><h1>ARKCommerce ' . __( 'Information', 'arkcommerce' ) . '</h1></p><div class="arkcommerce-wrap"><img width="100" height="80" alt="ARKCommerce" class="arkcommerce-pic-left" src="' . $arkcommerce_logo . '">' . $ark_links . $arkcommerce_link . ' | ' . $gateway_settings_link . ' | ' . $gateway_preferences_link . ' | ' . $gateway_navigator_link . ' |<img width="161" height="80" alt="GPLv3" class="arkcommerce-pic-right" src="' . plugin_dir_url( __FILE__ ) . 'assets/images/gplv3.png' . '">' );
 	}
 	elseif( $headertype == 'server' && file_exists( plugin_dir_path( __FILE__ ) . 'arkcommerceserver.php' ) )
 	{
@@ -2748,7 +2720,7 @@ if( isset( $_GET["page"] ) && isset( $_GET["section"] ) && $_GET["page"] == "wc-
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // ARKCommerce Footer version display on all ARKCommerce pages							//
-// @output ARKCommerce Foorer Version													//
+// @output ARKCommerce Footer Version													//
 //////////////////////////////////////////////////////////////////////////////////////////
 function arkcommerce_footer_version()
 {

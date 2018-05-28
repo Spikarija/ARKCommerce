@@ -9,8 +9,8 @@ Author URI:  https://github.com/Spikarija/ARKCommerce
 License:     MIT License
 Text Domain: arkcommerce
 Domain Path: /languages
-WC requires at least 3.2.4
-WC tested up to 3.4.0
+WC requires at least: 3.2.4
+WC tested up to: 3.4.0
 
 ARKCommerce
 Copyright (C) 2017 Milan Semen

@@ -9,7 +9,9 @@
 #### WordPress Payment Gateway for WooCommerce
 ----------
 
-![WordPress Payment Gateway Plugin for WooCommerce](https://imgur.com/HaXPX4D.jpg)
+<p align="center">
+<a href="https://arkcommerce.net"><img src="https://imgur.com/HaXPX4D.jpg" /></a>
+</p>
 
 ----------
 
@@ -19,6 +21,12 @@ ARKCommerce is a payment gateway that provides the infrastructure for ARK crypto
 ARKCommerce solution leverages the versatility, resilience and quickness of ARK blockchain which features a special field named SmartBridge that allows for inserting text, links, order number reference and so on into the transaction. The blockchain also features 8 second block times allowing for quick transaction confirmations. Fully based on open source code and architecture, ARKCommerce aims to provide the infrastructure with the goal of wider market acceptance for ARK.
 
 ----------
+
+## **COMING SOON**
+
+Native ARK/DARK Node API use - ARKCommerce is to break away from the current limitation imposed by a custom back-end that is in use for blockchain queries; V1.1.0 will be capable of communicating directly with ARK/DARK Node API for Mainnet and Devnet blockchain queries
+
+Testing is currently underway and the update will be released shortly
 
 ## **V1.0.1 Released**
 
@@ -30,7 +38,6 @@ Compatible with latest WordPress Core 4.9.6
 
 Compatible with latest WooCommerce 3.4.0
 
-
 ## **V1.0 Released**
 
 All plugin files have been published in this repository, as well as on https://wordpress.org/plugins/arkcommerce
@@ -39,7 +46,7 @@ The service is free for the foreseeable future, by all means take advantage of i
 
 ----------
 
-## **Mission Objectives**
+## **Initial Mission Objectives**
  - Develop an ARK payment gateway with automatic order processing and reliable transaction validation
  - Make the deployment and configiration easy and rapid via common WordPress and cPanel administration interfaces that are common with web hosting providers
  - Provide a configurable order expiry timeout mechanism
@@ -93,6 +100,12 @@ There will be an initial promotional period of absolutely free service. Subseqen
 ----------
 ## **Author**
 Spikarija - Milan Semen
+
+----------
+## **Support**
+
+The best way of supporting the project is by taking advantage of the client.
+ARK donations are also welcome at AXaDj4ADMgzw67zik3ynwktARVKgwfv1WP
 
 ----------
 ## **License**

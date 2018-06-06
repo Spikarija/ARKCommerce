@@ -64,9 +64,6 @@ The service is free for the foreseeable future, by all means take advantage of i
 ----------
 
 ## **Milestones to v1.0**
-When the plugin reaches its final form and infrastructure for running it is secure, v1.0 will be published both here on GitHub and WordPress.org for it relies on an ARKCommerce Node that is in intermittent operation and totally inaccessible from WAN at this time.
-
-**The initial development is nearly complete. Currently awaiting the arrival of hardware the system shall run on. As soon as the infrastructure is deployed, secured, and publicly accessible, UA testing shall commence.**
 
   - [x] Successful initial deployment and automated order processing
  
@@ -87,11 +84,10 @@ When the plugin reaches its final form and infrastructure for running it is secu
   - [X] Self-service user registration process implementation
  
   - [x] Website deployment and content creation
- 
-There will be an initial promotional period of absolutely free service. Subseqent introduction of fees may be necessary in order to cover infrastructure costs as the system relies on the ARKCommerce Node acting as a bridge between merchants and ARK blockchain queries.
+  
 
 ----------
-## **Current List of External Issues**
+## **List of External Issues**
  - <s>WooCommerce pricing issue</s>: https://github.com/woocommerce/woocommerce/issues/17581
 <s>*remedied in next release (3.2.4)</s> current release includes the fix
  - <s>ARK Desktop Client transaction altering issue</s>: https://github.com/ArkEcosystem/ark-desktop/issues/385

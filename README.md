@@ -10,7 +10,7 @@
 ----------
 
 <p align="center">
-<a href="https://arkcommerce.net"><img src="https://imgur.com/HaXPX4D.jpg" /></a>
+<a href="https://arkcommerce.net"><img src="https://www.arkcommerce.net/wp-content/uploads/sites/2/2018/06/githubheader.jpg" /></a>
 </p>
 
 ----------
@@ -22,11 +22,22 @@ ARKCommerce solution leverages the versatility, resilience and quickness of ARK 
 
 ----------
 
-## **COMING SOON**
+## **V1.1.0 Released**
 
-Native ARK/DARK Node API use - ARKCommerce is to break away from the current limitation imposed by a custom back-end that is in use for blockchain queries; V1.1.0 will be capable of communicating directly with ARK/DARK Node API for Mainnet and Devnet blockchain queries
+Switch to ARK/DARK Node API - now able to use any standard node for Mainnet and Devnet blockchain queries
 
-Testing is currently underway and the update will be released shortly
+Inclusion of WooCommerce Store Manager user role into available ARKCommerce events notification list
+
+Imposed limit for ARKCommerce open order queue to 50 due to ARK/DARK API available result count
+
+Code refactoring and plugin division into multiple modules
+
+Consolidation of translation files into a single POT
+
+Improved error handling
+
+Compatible with latest WooCommerce 3.4.2
+
 
 ## **V1.0.1 Released**
 
@@ -40,9 +51,7 @@ Compatible with latest WooCommerce 3.4.0
 
 ## **V1.0 Released**
 
-All plugin files have been published in this repository, as well as on https://wordpress.org/plugins/arkcommerce
-
-The service is free for the foreseeable future, by all means take advantage of it; register on https://www.arkcommerce.net/
+All plugin files have been published in this repository under MIT license, as well as on https://wordpress.org/plugins/arkcommerce under GNUv3 license
 
 ----------
 

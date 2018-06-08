@@ -199,6 +199,7 @@ function arkcommerce_upgrade_plugin_once()
 	unset( $arkgatewaysettings['arkpassword'] );
 	unset( $arkgatewaysettings['arkemail'] );
 	unset( $arkgatewaysettings['arknodeadmin'] );
+	unset( $arkgatewaysettings['arkapps'] );
 	
 	// Change ARKCommerce ARK Node hostname in options array (standard relay node)
 	$arkgatewaysettings['arknode'] = 'arknode.arkcommerce.net';

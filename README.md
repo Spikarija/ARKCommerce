@@ -24,6 +24,10 @@ ARKCommerce solution leverages the versatility, resilience and quickness of ARK 
 
 ## **V1.1.0 Released**
 
+**UPDATE BY JULY 2018**
+
+**Follow upgrade instruction post update by manually deactivating and reactivating the plugin**
+
 Switch to ARK/DARK Node API - now able to use any standard node for Mainnet and Devnet blockchain queries
 
 Inclusion of WooCommerce Store Manager user role into available ARKCommerce events notification list

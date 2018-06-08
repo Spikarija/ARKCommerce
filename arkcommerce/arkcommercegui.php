@@ -128,6 +128,11 @@ function arkcommerce_attention_required()
 		// Display warning notice
 		echo( '<div class="notice notice-warning is-dismissible"><p><span class="dashicons-before dashicons-arkcommerce" style="vertical-align:middle;"> </span> <strong>ARKCommerce ' . __( 'ARK network unresponsive or unreachable. Payment gateway service currently unavailable.', 'arkcommerce' ) . '</strong></p></div>' );
 	}
+	elseif( $arkgatewaysettings['enabled'] == "yes" && !empty( $arkgatewaysettings['nodeapikey'] ) &&  ARKCOMMERCE_VERSION == '1.1.0' ) 
+	{		
+		// Display error notice
+		echo( '<div class="notice notice-error is-dismissible"><p><span class="dashicons-before dashicons-arkcommerce" style="vertical-align:middle;"> </span> <strong>ARKCommerce ' . __( 'ARKCommerce requires deactivation and reactivation to upgrade properly and resume operation.', 'arkcommerce' ) . '</strong></p></div>' );
+	}
 }
 add_action( 'admin_notices', 'arkcommerce_attention_required' );
 

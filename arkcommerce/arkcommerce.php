@@ -99,7 +99,7 @@ function arkcommerce_activation()
 	if( empty( $arkgatewaysettings['arkorderexpirednotify'] ) ) $arkgatewaysettings['arkorderexpirednotify'] = 'on';
 	
 	// Add ARKCommerce initial exchange rate to options array
-	if( empty( $arkgatewaysettings['arkexchangerate'] ) ) $arkgatewaysettings['arkexchangerate'] = arkcommerce_update_exchange_rate();
+	if( empty( $arkgatewaysettings['arkexchangerate'] ) ) $arkgatewaysettings['arkexchangerate'] = '';
 	
 	// Add ARKCommerce store exchange rate type to options array: autorate/multirate/fixedrate
 	if( empty( $arkgatewaysettings['arkexchangetype'] ) ) $arkgatewaysettings['arkexchangetype'] = 'autorate';

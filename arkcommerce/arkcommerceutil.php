@@ -127,9 +127,6 @@ function arkcommerce_validation_worker()
 	$arkgatewaysettings = get_option( 'woocommerce_ark_gateway_settings' );
 	global $wpdb;
 	
-	// Plugin upgrade from v1.0.x to v1.1.0 (if applicable)
-	if( !empty( $arkgatewaysettings['arkapikey'] ) ) arkcommerce_upgrade_plugin_once();
-	
 	// Construct a query for all WC orders made using ARKCommerce payment gateway
 	$arkordersquery = ( "SELECT post_id FROM " . $wpdb->postmeta . " WHERE meta_value='ark_gateway';" );
 	
